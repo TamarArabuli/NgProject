@@ -1,0 +1,41 @@
+<div class="upper">
+    <div class="div"></div>
+    <p>Order Online Now - No Delivery Fee</p>
+    <div class="logIn">
+        <i class="fa-solid fa-user"></i>
+        <p>Log In</p>
+
+    </div>
+</div>
+
+<div class="header">
+   <a href="">
+    <img src="../../images/LogoResraurant.png" alt="">
+   </a>
+
+   <nav>
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Menu</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+   </nav>
+
+   <div class="cart">
+    <i class="fa-solid fa-cart-shopping"></i>
+      <div class="burger" (click)="showHide()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+   </div>
+
+</div>
+
+<div class="mobileMenu" *ngIf="showMobile">
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Menu</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+</div>
