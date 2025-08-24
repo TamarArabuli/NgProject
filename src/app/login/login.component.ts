@@ -17,7 +17,7 @@ export class LoginComponent {
   phone!: string;
 
   logIn(){
-    this.http.postData("https://rentcar.stepprojects.ge/api/Users/register", {
+    this.http.postData("https://rentcar.stepprojects.ge/api/Users/login", {
      phoneNumber : this.phone,
      password : this.password
     }).subscribe((resp : any) => {
