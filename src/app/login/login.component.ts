@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginComponent {
 
-  constructor(private  http : ApiService){
+  constructor(private  http : ApiService, private router : Router){
 
   }
   password!: string;
@@ -22,8 +24,14 @@ export class LoginComponent {
      password : this.password
     }).subscribe((resp : any) => {
       console.log(resp)
+      Swal.fire({
+      title: "Logged In Successfuly",
+      text: "You can order now",
+      icon: "Success"});
+      localStorage.setItem('token', resp.token)
+      this.router.navigateByUrl('/menu')
     })
-    localStorage.setItem('token', 'token')
+   
   }
 
   }

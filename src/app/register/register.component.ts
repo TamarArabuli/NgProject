@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
 
-  constructor(private http : ApiService){
+  constructor(private http : ApiService, private router : Router){
 
   }
 
@@ -23,15 +25,12 @@ export class RegisterComponent {
      password : this.password
     }).subscribe((resp : any) => {
       console.log(resp)
+      Swal.fire({
+            title: "Registered Successfuly",
+            text: "You can log in now",
+            icon: "Success"});
+            this.router.navigateByUrl("/login")
     })
-    localStorage.setItem('token', 'token')
+  
   }
 }
-
-
-  // "phoneNumber": "string",
-  // "password": "string",
-  // "email": "string",
-  // "firstName": "string",
-  // "lastName": "string",
-  // "role": "string"

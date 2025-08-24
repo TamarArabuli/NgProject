@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import Swal from 'sweetalert2';
 
@@ -10,18 +10,20 @@ export class ApiService {
 
   constructor(private http : HttpClient) { }
 
+
   getData(url : string){
     return this.http.get(url).pipe(
-      catchError(this.errorHandling)
+       catchError(this.errorHandling)
     )
   }
 
-  postData(url : string, obj :any ){
+
+  postData(url : string, obj : any){
     return this.http.post(url, obj).pipe(
-      catchError(this.errorHandling)
+       catchError(this.errorHandling)
     )
   }
-}
+
 
 private errorHandling (err : HttpErrorResponse) {
   return throwError(() => {
@@ -34,4 +36,5 @@ private errorHandling (err : HttpErrorResponse) {
 })
 
   })
+}
 }
