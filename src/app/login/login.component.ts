@@ -27,7 +27,7 @@ export class LoginComponent {
       Swal.fire({
       title: "Logged In Successfuly",
       text: "You can order now",
-      icon: "Success"});
+      icon: "success"});
       localStorage.setItem('token', resp.token)
       this.router.navigateByUrl('/menu')
     })

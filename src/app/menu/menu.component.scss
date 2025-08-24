@@ -1,0 +1,14 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200vh;
+    background-image: url(../../../public/menuBackground.avif);
+    background-size: cover;
+        .products{
+            width: 80%;
+            height: 150vh;
+            background-color: white;
+        }
+}

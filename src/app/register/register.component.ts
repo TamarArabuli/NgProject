@@ -28,7 +28,7 @@ export class RegisterComponent {
       Swal.fire({
             title: "Registered Successfuly",
             text: "You can log in now",
-            icon: "Success"});
+            icon: "success"});
             this.router.navigateByUrl("/login")
     })
   
