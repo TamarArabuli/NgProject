@@ -15,26 +15,25 @@ export const routes: Routes = [
         pathMatch: 'full'
     },
     {
-        path: 'home',
-        component: HomeComponent
-
-    },
-    {
-        path: 'menu',
-        component: MenuComponent
-    },
-    {
-        path: 'login',
-        component: LoginComponent
+        path: "home",
+        loadComponent: () => import('./home/home.component').then(p => p.HomeComponent),
     },
       {
-        path: 'register',
-        component: RegisterComponent
+        path: "menu",
+        loadComponent: () => import('./menu/menu.component').then(p => p.MenuComponent),
     },
-       {
-        path: 'cart',
-        component: CartComponent,
-        canActivate: [authGuard]
+    {
+        path: "login",
+        loadComponent: () => import('./login/login.component').then(p => p.LoginComponent),
+    },
+    {
+        path: "register",
+        loadComponent: () => import('./register/register.component').then(p => p.RegisterComponent),
+    },
+  {
+        path: "cart",
+        loadComponent: () => import('./cart/cart.component').then(p => p.CartComponent),
+         canActivate: [authGuard]
     },
     {
         path: '**',
