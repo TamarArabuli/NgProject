@@ -1,1 +1,19 @@
-<p>cart works!</p>
+<main>
+    <div class="cart">
+        <h1>CART</h1>
+
+        <div class="card" *ngFor="let el of productArr">
+            <img src="{{el.product.image}}" alt="">
+            <h4>{{el.product.name}}</h4>
+            <div class="quantity">
+            <button (click)="plusOne(el.product.id, el.quantity+1, el.product.price*(el.quantity+1))" class="updown up"><i class="fa-solid fa-up-long"></i></button>
+            <div class="box">
+            <h6>{{el.quantity}}</h6>
+            </div>
+            <button (click)="minusOne(el.product.id, el.quantity-1, el.product.price*(el.quantity-1))" class="updown down"><i class="fa-solid fa-down-long"></i></button>
+            </div>
+            <h6>{{el.price}}₾</h6>
+            <button (click)="deleteOne(el.product.id)" class="delete"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+</main>

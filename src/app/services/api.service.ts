@@ -24,6 +24,18 @@ export class ApiService {
     )
   }
 
+   updateData(url : string, obj : any){
+    return this.http.put(url, obj).pipe(
+       catchError(this.errorHandling)
+    )
+  }
+
+    deleteData(url : string){
+    return this.http.delete(url).pipe(
+       catchError(this.errorHandling)
+    )
+  }
+
 
 private errorHandling (err : HttpErrorResponse) {
   return throwError(() => {

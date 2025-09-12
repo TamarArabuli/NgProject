@@ -3,6 +3,7 @@ import { ApiService } from '../services/api.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,13 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent {
 
-  constructor(private  http : ApiService, private router : Router){
+  constructor(private  http : ApiService, private router : Router,
+    private auth : AuthService
+  ){
 
   }
+
+
   password!: string;
   phone!: string;
 
@@ -29,6 +34,7 @@ export class LoginComponent {
       text: "You can order now",
       icon: "success"});
       localStorage.setItem('token', resp.token)
+      this.auth.logIn()
       this.router.navigateByUrl('/menu')
     })
    

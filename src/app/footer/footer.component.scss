@@ -1,5 +1,34 @@
-footer{
-    height: 40vh;
-    width: 100%;
-    background-color:#9B0005;
+footer {
+  height: 40vh;
+  width: 100%;
+  background-color: #9b0005;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 70px;
+  padding-left: 50px;
+
+  .contactUs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+  }
+
+  .address {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+  }
+
+  .openingHours {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    color: white;
+  }
+
+  .emptyside {
+    width: 60%;
+  }
 }

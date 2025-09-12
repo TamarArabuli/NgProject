@@ -1,139 +1,149 @@
 .upper {
-    width: 100%;
-    height: 40px;
-    background-color: #9B0005;
-    color: white;
+  width: 100%;
+  height: 40px;
+  background-color: #9b0005;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  p {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    p{
-        display: flex;
-        justify-content: center;
-        width: 30%;
-    }
-    .div{
-        width: 30%;
-    }
-    
-    .logIn{
-        width: 30%;
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-        align-items: center;
-        gap: 0px;
-    }
-}
+    justify-content: center;
+    width: 30%;
+  }
+  .div {
+    width: 30%;
+  }
 
-.header{
-    width: 100%;
-    height: 80px;
-    padding: 0 50px;
+  .logIn {
+    width: 30%;
     display: flex;
     flex-direction: row;
+    justify-content: end;
     align-items: center;
-    justify-content: space-between;
-    box-shadow: 5px 5px 5px gray;
+    gap: 0px;
+  }
 
-    a{
-        
-        z-index: 100;
-        img{
-            height: 70px;
-        }
-    }
-
-    nav{
-        ul{
-            display: flex;
-            gap: 30px;
-            list-style: none;
-            li{
-                a{
-                    color: black;
-                     text-decoration: none;
-                }
-            }
-        }
-    }
-    
-    .cart{
-        color: #9B0005;
-        display: flex;
-        gap: 20px;
-        i{
-            width: 20px;
-            height: 20px;
-        }
-
-        .burger{
-        display: none;
-        gap: 5px;
-        flex-direction: column;
-
-        .line{
-            width: 30px;
-            height: 4px;
-            background-color: #9B0005;
-            border-radius: 5px;
-
-        }
-    }
-    }
-
-    
+  button {
+    background-color: #fff2d9;
+    border: 1px solid #9b0005;
+    color: #9b0005;
+    border-radius: 15px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-left: 5px;
+  }
 }
 
-.mobileMenu{
-    height: 100vh;
-    width: 100%;
-    background-color: gray;
-    ul{
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center !important;
-        align-items: center;
-        gap: 50px;
-        li{
-            a{
-                text-decoration: none;
-                color: black;
-            }
+.header {
+  width: 100%;
+  height: 80px;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 5px 5px 5px gray;
+
+  a {
+    z-index: 100;
+    img {
+      height: 70px;
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      li {
+        a {
+          color: black;
+          text-decoration: none;
         }
+      }
     }
+  }
+
+  .cart {
+    color: #9b0005;
+    display: flex;
+    gap: 20px;
+    i {
+      width: 20px;
+      height: 20px;
+    }
+
+    .burger {
+      display: none;
+      gap: 5px;
+      flex-direction: column;
+
+      .line {
+        width: 30px;
+        height: 4px;
+        background-color: #9b0005;
+        border-radius: 5px;
+      }
+    }
+  }
 }
 
-
-@media screen and (max-width:800px) {
-
-.upper{
-    .div{
-        width: 10%;
+.mobileMenu {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background-color: #fff2d9;
+  justify-content: center;
+  align-items: center;
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+    gap: 50px;
+    li {
+      a {
+        font-size: 30px;
+        font-weight: 500;
+        color: #9b0005 !important;
+        text-decoration: none;
+        color: black;
+      }
+      a:hover{
+        color: rgb(56, 55, 55) !important;
+      }
     }
-    p{
-        width: 60%
-    }
+  }
 }
 
-    .header{
-        nav {
-            display: none;
-        }
-    
+@media screen and (max-width: 800px) {
+  .upper {
+    .div {
+      width: 10%;
+    }
+    p {
+      width: 60%;
+    }
+  }
 
-    
-    .cart{
-        .burger{
-            display: flex !important;
-         }
-    
-     
-    } 
-   } 
+  .header {
+    nav {
+      display: none;
+    }
+
+    .cart {
+      .burger {
+        display: flex !important;
+      }
+    }
+  }
 }
 
-.active{
-    background-color: #9B0005;
-    padding: 10px 20px;
+.active {
+  background-color: #9b0005;
+  padding: 10px 20px;
 }

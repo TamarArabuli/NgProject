@@ -1,60 +1,66 @@
 <main>
-    <div class="products">
-        <div class="buttons">
-            <button class="upper"  *ngFor="let el of categoryArr">{{el.name}}</button>
-        </div>
-        <div class="filt">
-            <div class="filter">
-                <div class="spiciness">
-                    <label>Spiciness:
-                    <input type="number" v-model="spiciness" min="0" max="5" >
-                    </label>
-                </div>
-                <div class="nuts">
-                    <input type="checkbox" name="" id="">
-                    <label for="">No Nuts</label>
-                </div>
-
-                <div class="Vegetarian">
-                    <input type="checkbox" name="" id="">
-                    <label for="">Vegetarian Only</label>
-                </div>
-
-                <div class="buttons">
-                    <button>RESET</button>
-                    <button>APPLY FILTER</button>
-                </div>
-                
-            </div>
-        </div>
-        <div class="main">
-
-
-            <div class="card" *ngFor="let el of productArr">
-                <div class="upPart">
-                    <img src="{{el.image}}" alt="">
-                </div>
-
-                <div class="downPart">
-                    <h4>{{el.name}}</h4>
-                    <p>Spiciness: {{el.spiciness}} </p>
-
-                    <div class="nutsVeg">
-                        <p>nuts: {{el.nuts}}</p>
-                        <p>Vegeterian: {{el.vegeterian}}</p>
-                    </div>
-                
-
-                <div class="priceButton">
-                    <h2>{{el.price}}₾</h2>
-                    <button>Add to Cart</button>
-                </div>
-                </div>
-            </div>
-
-
-
-        </div>
-        
+  <div class="products">
+    <div class="buttons">
+      <button
+        class="upper"
+        (click)="filterByCategory(el.id)"
+        *ngFor="let el of categoryArr"
+      >
+        {{ el.name }}
+      </button>
     </div>
+    <div class="filt">
+      <div class="filter">
+        <div class="spiciness">
+          <i class="fa-solid fa-pepper-hot"></i>
+          <label
+            >Spiciness:
+            <input
+              [(ngModel)]="spa"
+              type="number"
+              v-model="spiciness"
+              min="0"
+              max="5"
+            />
+          </label>
+        </div>
+        <div class="nuts">
+          <input [(ngModel)]="nuts" type="checkbox" name="" id="" />
+          <label for="">No Nuts</label>
+        </div>
+
+        <div class="Vegetarian">
+          <input [(ngModel)]="veg" type="checkbox" name="" id="" />
+          <label for="">Vegetarian Only</label>
+        </div>
+
+        <div class="buttons">
+          <button (click)="resetFilter()">RESET</button>
+          <button (click)="applyFilter()">APPLY FILTER</button>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="card" *ngFor="let el of productArr">
+        <div class="upPart">
+          <img src="{{ el.image }}" alt="" />
+        </div>
+
+        <div class="downPart">
+          <h4>{{ el.name }}</h4>
+          <p>Spiciness: {{ el.spiciness }}</p>
+
+          <div class="nutsVeg">
+            <p>nuts: {{ el.nuts }}</p>
+            <p>Vegeterian: {{ el.vegeterian }}</p>
+          </div>
+
+          <div class="priceButton">
+            <h2>{{ el.price }}₾</h2>
+            <button (click)="add(el.id, 1, el.price)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
