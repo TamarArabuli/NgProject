@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Product } from '../models/Product';
 import { find } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu',
@@ -30,6 +31,7 @@ export class MenuComponent {
       });
   }
 
+  selectedCategory = 0;
   categoryArr: Category[] = [];
   productArr: Product[] = [];
   spa = 0;
@@ -38,6 +40,7 @@ export class MenuComponent {
   isThereId!: boolean;
 
   filterByCategory(id: number) {
+    this.selectedCategory = id;
     this.http
       .getData(
         `https://restaurant.stepprojects.ge/api/Categories/GetCategory/${id}`
@@ -66,24 +69,61 @@ export class MenuComponent {
       });
   }
 
-  // isThere() {
+  // isThere(id: number) {
   //   this.http
   //     .getData('https://restaurant.stepprojects.ge/api/Baskets/GetAll')
-  //     .subscribe(
-  //       (resp: any) => console.log(resp),
-  //       (this.isThereId = resp.find())
-  //     );
+  //     .subscribe((resp: any) => {
+  //       if (resp.length > 0) {
+  //         debugger;
+  //         return resp.find((el: any) => el.product.id == id);
+  //       } else {
+  //         return undefined;
+  //       }
+  //     });
   // }
 
   add(id: number, quantity: number, price: number) {
     this.http
-      .postData('https://restaurant.stepprojects.ge/api/Baskets/AddToBasket', {
-        quantity: quantity,
-        price: price,
-        productId: id,
-      })
+      .getData('https://restaurant.stepprojects.ge/api/Baskets/GetAll')
       .subscribe((resp: any) => {
-        console.log(resp);
+        let item = resp.find((el: any) => el.product.id == id);
+
+        if (!item) {
+          this.http
+            .postData(
+              'https://restaurant.stepprojects.ge/api/Baskets/AddToBasket',
+              {
+                quantity: quantity,
+                price: price,
+                productId: id,
+              }
+            )
+            .subscribe((res: any) => {
+              console.log(res);
+              Swal.fire({
+              title: 'Product added sucessfully!',
+              text: 'Do you want to continue',
+              icon: 'Success',
+              confirmButtonText: 'Cool'}) })
+         else {
+          this.http
+            .updateData(
+              'https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket',
+              {
+                quantity: item.quantity + 1,
+                price: (item.quantity + 1) * item.product.price,
+                productId: id,
+              }
+            )
+            .subscribe((res: any) => {
+              console.log(res);
+              Swal.fire({
+              title: 'Product changed sucessfully!',
+              text: 'Do you want to continue',
+              icon: 'Success',
+              confirmButtonText: 'Cool'});
+            });
+        }
       });
   }
 }

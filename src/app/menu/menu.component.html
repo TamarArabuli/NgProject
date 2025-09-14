@@ -5,6 +5,7 @@
         class="upper"
         (click)="filterByCategory(el.id)"
         *ngFor="let el of categoryArr"
+        [ngClass]="{ active: el.id === selectedCategory }"
       >
         {{ el.name }}
       </button>

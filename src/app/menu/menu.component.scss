@@ -1,190 +1,188 @@
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  // height: 200vh;
+  background-image: url(../../../public/menuBackground.avif);
+  background-size: cover;
+  .products {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+    width: 80%;
     // height: 200vh;
-    background-image: url(../../../public/menuBackground.avif);
-    background-size: cover;
-        .products{
-            margin-top: 100px;
-            margin-bottom: 100px;
-            padding-bottom: 100px;
-            width: 80%;
-            // height: 200vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    .buttons {
+      margin: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      .upper {
+        background-color: #fff2d9;
+        border: 1px solid #9b0005;
+        width: 140px;
+        height: 35px;
+        border-radius: 15px;
+        color: #9b0005;
+      }
+
+      .upper:hover {
+        background-color: #9b0005;
+        color: #fff2d9;
+      }
+    }
+
+    .filt {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+      background-color: #fff2d9;
+
+      .filter {
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+        display: flex;
+        gap: 40px;
+
+        .spiciness {
+          i {
+            color: #9b0005;
+          }
+          input {
+            width: 50px;
+            height: 30px;
+            background-color: #fff2d9;
+            color: #9b0005;
+            outline: none;
+            border: none;
+          }
+        }
+
+        .nuts {
+          display: flex;
+          gap: 10px;
+          input {
+            height: 20px;
+            width: 20px;
+            background-color: #fff2d9;
+            color: #9b0005;
+          }
+        }
+        .Vegetarian {
+          display: flex;
+          gap: 10px;
+          input {
+            height: 20px;
+            width: 20px;
+            background-color: #fff2d9;
+            color: #9b0005;
+          }
+        }
+
+        .buttons {
+          button {
+            background-color: #9b0005;
+            color: #fff2d9;
+            border: 1px solid #9b0005;
+            width: 140px;
+            height: 35px;
+            border-radius: 15px;
+          }
+
+          button:hover {
+            background-color: #fff2d9;
+            border: 1px solid #9b0005;
+            color: #9b0005;
+          }
+        }
+      }
+    }
+
+    .main {
+      padding-top: 50px;
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+
+      .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 500px;
+        border: 1px solid #9b0005;
+        border-radius: 15px;
+        gap: 10px;
+
+        .upPart {
+          img {
+            width: 250px;
+          }
+        }
+
+        .downPart {
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff2d9;
+          width: 100%;
+          height: 500px;
+
+          h4 {
+            color: #9b0005;
+          }
+
+          .nutsVeg {
             display: flex;
-            flex-direction: column;
-            background-color: white;
-            align-items: center;
-                .buttons{
-                    margin: 50px;
-                    display: flex;
-                    justify-content: center;
-                    gap:10px;
-                    flex-wrap: wrap;
-                    .upper {
-                            background-color: #FFF2D9;
-                            border: 1px solid #9B0005;
-                            width: 140px;
-                            height: 35px;
-                            border-radius: 15px;
-                            color: #9B0005;
-                    }
+            gap: 10px;
+          }
 
-                     .upper:hover{
-                        background-color: #9B0005;
-                        color: #FFF2D9;
-                     }
-                }
-                
-                .filt{
-                    display: flex;
-                    justify-content: center;
-                    width: 80%;
-                    background-color: #FFF2D9;
+          .priceButton {
+            display: flex;
+            gap: 60px;
 
-                        .filter{
-                            justify-content: center;
-                            align-items: center;
-                            margin: 50px;
-                            display: flex;
-                            gap: 40px;
+            h2 {
+              color: #9b0005;
+            }
 
-                            .spiciness {
-                              i{
-                                color: #9B0005;
-                              }
-                                input{
-                                    width: 50px;
-                                    height: 30px;
-                                    background-color: #FFF2D9;
-                                    color: #9B0005;
-                                    outline: none;
-                                    border: none;
-                                }
-                            }
+            button {
+              background-color: #9b0005;
+              color: #fff2d9;
+              border: 1px solid #9b0005;
+              width: 140px;
+              height: 35px;
+              border-radius: 15px;
+            }
 
-                            .nuts{
-                              
-                                display: flex;
-                                gap: 10px;
-                                input{
-                                    height: 20px;
-                                    width: 20px;
-                                    background-color: #FFF2D9;
-                                    color: #9B0005;
-      
-                                }
-                            }
-                               .Vegetarian{
-                                
-                                display: flex;
-                                gap: 10px;
-                                input{
-                                    height: 20px;
-                                    width: 20px;
-                                    background-color: #FFF2D9;
-                                    color: #9B0005;
-                                }
-                            }
-
-
-                            .buttons{
-                               
-                                button{
-                              background-color: #9B0005;
-                              color: #FFF2D9;
-                              border: 1px solid #9B0005;
-                              width: 140px;
-                              height: 35px;
-                              border-radius: 15px;
-                                }
-                                
-                                button:hover {
-                                      background-color: #FFF2D9;
-                                      border: 1px solid #9B0005;
-                                      color: #9B0005;
-                                }
-                            }
-                        }
-
-                }
-
-                .main{
-                    padding-top: 50px;
-                    width: 80%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 10px;
-                    justify-content: center;
-
-                    .card{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 300px;
-                        height: 500px;
-                        border: 1px solid #9B0005;
-                        border-radius: 15px;
-                        gap: 10px;
-
-                            .upPart{
-                                img{
-                                    width: 250px;
-                                }
-                            }
-
-                            .downPart{
-                                overflow: hidden;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: center;
-                                background-color: #FFF2D9;
-                                width: 100%;
-                                height: 500px;
-                              
-                                h4{
-                                    color: #9B0005;
-                                }
-
-                                .nutsVeg{
-                                    display: flex;
-                                    gap: 10px
-                                }
-
-                                .priceButton{
-                                   display: flex;
-                                   gap: 60px;
-
-                                   h2{
-                                    color: #9B0005;
-                                   }
-
-                                   button{
-                                       background-color: #9B0005;
-                                       color: #FFF2D9;
-                                       border: 1px solid #9B0005;
-                                       width: 140px;
-                                       height: 35px;
-                                       border-radius: 15px;
-                                   }
-
-                                      button:hover {
-                                      background-color: #FFF2D9;
-                                      border: 1px solid #9B0005;
-                                      color: #9B0005;
-                                }
-                                }
-                            }
-
-                    }
-                }
+            button:hover {
+              background-color: #fff2d9;
+              border: 1px solid #9b0005;
+              color: #9b0005;
+            }
+          }
         }
+      }
     }
+  }
+}
 
-    @media screen and (max-width:1000px) {
-        .filter{
-            flex-direction: column;
-        }
-    }
+.active {
+  background-color: #9b0005 !important;
+  color: #fff2d9 !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .filter {
+    flex-direction: column;
+  }
+}
