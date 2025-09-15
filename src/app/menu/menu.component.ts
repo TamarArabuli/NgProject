@@ -101,11 +101,13 @@ export class MenuComponent {
             .subscribe((res: any) => {
               console.log(res);
               Swal.fire({
-              title: 'Product added sucessfully!',
-              text: 'Do you want to continue',
-              icon: 'Success',
-              confirmButtonText: 'Cool'}) })
-         else {
+                title: 'Product added sucessfully!',
+                text: 'Do you want to continue',
+                icon: 'success',
+                confirmButtonText: 'Cool',
+              });
+            });
+        } else {
           this.http
             .updateData(
               'https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket',
@@ -118,10 +120,11 @@ export class MenuComponent {
             .subscribe((res: any) => {
               console.log(res);
               Swal.fire({
-              title: 'Product changed sucessfully!',
-              text: 'Do you want to continue',
-              icon: 'Success',
-              confirmButtonText: 'Cool'});
+                title: 'Product changed sucessfully!',
+                text: 'Do you want to continue',
+                icon: 'success',
+                confirmButtonText: 'Cool',
+              });
             });
         }
       });
