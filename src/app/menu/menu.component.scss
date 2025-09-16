@@ -186,3 +186,16 @@ main {
     flex-direction: column;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .main{
+  width: 90% !important;
+  }
+  .products{
+    width: 90% !important;
+  }
+  .card {
+        width: 400px !important;
+  }
+}
+

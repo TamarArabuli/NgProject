@@ -101,3 +101,12 @@ main {
       }
     }
   }
+@media screen and (max-width: 400px) {
+    main {
+      .cart {
+        .card {
+          height: 330px;
+        }
+      }
+    }
+  }
